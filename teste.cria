@@ -1,0 +1,20 @@
+ÉNOIS
+BAGULHOS x, y, resultado;
+
+SEPA (x > y)
+    FALA("X é maior que Y");
+NÃOFOI
+    FALA("Y é maior ou igual a X");
+FIMSEPA
+
+MANDALEMBRAR (i <- 1; i <= 10; i <- i + 1)
+    resultado <- resultado + i;
+DESENCANA
+
+MANDAENQUANTO (x < 100)
+    x <- x + 10;
+PARAMANDA
+
+OLHA(x);
+FALA(resultado);
+PARTIU
