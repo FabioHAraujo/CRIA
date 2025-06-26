@@ -24,3 +24,13 @@ if not exist "%LEX_FILE%" (
 
 :: Roda o analisador sintático
 python sintatico.py "%LEX_FILE%"
+
+:: Verifica se o arquivo .syn foi gerado
+set "SYN_FILE=%~n1.syn"
+if not exist "%SYN_FILE%" (
+    echo Erro: Arquivo %SYN_FILE% nao foi gerado!
+    exit /b 1
+)
+
+:: Roda o analisador semântico e gerador de código
+python semantico_e_codigo.py "%LEX_FILE%"

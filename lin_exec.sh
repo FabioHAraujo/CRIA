@@ -24,3 +24,13 @@ fi
 
 # Roda o analisador sintático
 python3 sintatico.py "$LEX_FILE"
+
+# Verifica se o arquivo .syn foi gerado
+SYN_FILE="${1%.cria}.syn"
+if [ ! -f "$SYN_FILE" ]; then
+    echo "Erro: Arquivo $SYN_FILE não foi gerado!"
+    exit 1
+fi
+
+# Roda o analisador semântico e gerador de código
+python3 semantico_e_codigo.py "$LEX_FILE"
